@@ -3,21 +3,32 @@
     <div class="row header d-flex justify-content-center text-light title-bg">
       <div class="col-12 d-flex flex-column">
         <div class="title d-flex justify-content-center">
-          <h1 v-if="board.title && !editToggle">{{board.title}}</h1>
+          <h1 v-if="board.title && !editToggle">{{ board.title }}</h1>
           <div class="btn-group dropright">
-              <i class="fa fa-ellipsis-v btn big-button" aria-hidden="true" role="button" data-toggle="dropdown"></i>
-              <div class="dropdown-menu ml-1 text-center">
-                <p class="btn" @click="editToggle = !editToggle">Edit Board</p>
-                <p class="btn" @click="deleteBoard">Delete Board</p>
-              </div>
+            <i
+              class="fa fa-ellipsis-v btn big-button"
+              aria-hidden="true"
+              role="button"
+              data-toggle="dropdown"
+            ></i>
+            <div class="dropdown-menu ml-1 text-center">
+              <p class="btn" @click="editToggle = !editToggle">Edit Board</p>
+              <p class="btn" @click="deleteBoard">Delete Board</p>
+            </div>
           </div>
         </div>
-        <h4 v-if="board.description && !editToggle">{{board.description}}</h4>
+        <h4 v-if="board.description && !editToggle">{{ board.description }}</h4>
       </div>
 
       <div id="editForm">
         <form class="form" @submit.prevent="editBoard" v-if="editToggle">
-          <input type="text" class="form-control mb-2" aria-describedby="helpId" v-model="boardData.title" placeholder="Board Title..." />
+          <input
+            type="text"
+            class="form-control mb-2"
+            aria-describedby="helpId"
+            v-model="boardData.title"
+            placeholder="Board Title..."
+          />
           <input
             type="text"
             class="form-control"
@@ -25,7 +36,11 @@
             v-model="boardData.description"
             placeholder="Board Description..."
           />
-          <button type="submit" class="btn btn-warning" @click="editToggle = !editToggle">
+          <button
+            type="submit"
+            class="btn btn-warning"
+            @click="editToggle = !editToggle"
+          >
             <i class="fa fa-arrow-circle-right big-icon" aria-hidden="true"></i>
           </button>
         </form>
@@ -35,8 +50,18 @@
       <div class="col-12 d-flex">
         <form class="form-inline">
           <div class="form-group">
-          <i class="fa fa-plus-circle btn btn-danger  text-shadow pointer" @click="addList" aria-hidden="true"></i>
-          <input type="text" placeholder="Type new list name..." class="form-control" v-model="newList.title" required />
+            <i
+              class="fa fa-plus-circle btn btn-danger text-shadow pointer"
+              @click="addList"
+              aria-hidden="true"
+            ></i>
+            <input
+              type="text"
+              placeholder="Type new list name..."
+              class="form-control"
+              v-model="newList.title"
+              required
+            />
           </div>
         </form>
       </div>
@@ -117,17 +142,17 @@ export default {
 .pointer {
   cursor: pointer;
 }
-.title-bg{
+.title-bg {
   background-color: rgba(68, 67, 67, 0.534);
 }
-.big-button{
+.big-button {
   font-size: 1.3em;
 }
-  .big-button:active{
-    text-shadow: 0px 0px 1px #2c2c2c;
-    transform: ;
-  }
-.text-shadow{
+.big-button:active {
+  text-shadow: 0px 0px 1px #2c2c2c;
+  transform: ;
+}
+.text-shadow {
   text-shadow: 2px 2px 6px #000000;
 }
 </style>

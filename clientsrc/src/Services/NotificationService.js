@@ -35,7 +35,6 @@ export default class NotificationService {
     // @ts-ignore
     Swal.fire({
       title: title,
-      text: "Nice!",
       position: 'top-end',
       icon: 'success',
       showConfirmButton: false,

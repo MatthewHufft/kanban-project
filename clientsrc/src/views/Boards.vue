@@ -10,7 +10,9 @@
           type="button"
           data-toggle="modal"
           data-target="#exampleModal"
-        >Create New Board</button>
+        >
+          Create New Board
+        </button>
         <div
           class="modal fade"
           id="exampleModal"
@@ -22,8 +24,15 @@
           <div class="modal-dialog shadow-lg" role="document">
             <div class="modal-content text-light">
               <div class="modal-header bg-danger">
-                <h5 class="modal-title text-light" id="exampleModalLabel">Create Board (つくる)</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title text-light" id="exampleModalLabel">
+                  Create Board (つくる)
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -46,18 +55,25 @@
                     type="submit"
                     class="btn btn-danger"
                     @submit.prevent="addBoard"
-                  >Create Board</button>
+                  >
+                    Create Board
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <ul class="list-group list-boards m-1 col" v-for="board in boards" :key="board.id">
+        <ul
+          class="list-group list-boards m-1 col"
+          v-for="board in boards"
+          :key="board.id"
+        >
           <li class="list-group-item">
             <router-link
               class="list-group"
-              :to="{name: 'board', params: {boardId: board.id}}"
-            >{{board.title}}</router-link>
+              :to="{ name: 'board', params: { boardId: board.id } }"
+              >{{ board.title }}</router-link
+            >
           </li>
         </ul>
       </div>

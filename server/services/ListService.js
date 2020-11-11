@@ -1,7 +1,7 @@
 import { dbContext } from "../db/DbContext"
 import { BadRequest } from "../utils/Errors"
 
-class ListService{
+class ListService {
   async getAll(userEmail) {
     return await dbContext.Lists.find({ creatorEmail: userEmail }).populate("creator", "name picture")
   }
@@ -13,8 +13,8 @@ class ListService{
     }
     return data
   }
-  async getListsByBoardId(boardId, email){
-    let data = await dbContext.Lists.find({ boardId: boardId, creatorEmail: email})
+  async getListsByBoardId(boardId, email) {
+    let data = await dbContext.Lists.find({ boardId: boardId, creatorEmail: email })
     return data
   }
 
