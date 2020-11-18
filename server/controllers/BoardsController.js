@@ -23,7 +23,6 @@ export class BoardsController extends BaseController {
 
   async getAll(req, res, next) {
     try {
-      //only gets boards by user who is logged in
       let data = await boardService.getAll(req.userInfo.email)
       return res.send(data)
     }
