@@ -48,7 +48,7 @@
     </div>
     <div class="row">
       <div class="col-12 d-flex">
-        <form class="form-inline">
+        <form @submit="addList" class="form-inline">
           <div class="form-group">
             <i
               class="fa fa-plus-circle btn btn-danger text-shadow pointer"
@@ -69,18 +69,6 @@
 
     <div class="row mt-4 d-flex">
       <list-component v-for="list in lists" :key="list.id" :listProp="list" />
-      <!-- inject lists here -->
-      <!-- <div class="col-3 listComp">
-        <div class="rounded" style="width: 25rem;">
-          <h4 class="card-header d-flex justify-content-between">3 things on your agenda</h4>
-          <ul class="list-group" id="tasks">
-            
-          </ul>
-          <form @click="addTask">
-            <input type="text" class="form-control" placeholder="Add list item + Enter" required />
-          </form>
-        </div>
-      </div>-->
     </div>
   </div>
 </template>
@@ -129,6 +117,7 @@ export default {
     },
     addList() {
       this.$store.dispatch("addList", this.newList);
+      
     },
     editBoard() {
       this.boardData.id = this.$route.params.boardId;
@@ -148,11 +137,8 @@ export default {
 .big-button {
   font-size: 1.3em;
 }
-.big-button:active {
-  text-shadow: 0px 0px 1px #2c2c2c;
-  transform: ;
-}
-.text-shadow {
-  text-shadow: 2px 2px 6px #000000;
-}
+  .big-button:active{
+    text-shadow: 0px 0px 1px #2c2c2c;
+  }
+
 </style>

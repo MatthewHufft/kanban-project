@@ -115,7 +115,7 @@ export default new Vuex.Store({
           commit("removeBoard", boardId)
           commit("setActiveBoard", {})
           router.push({ name: "boards" })
-          ns.toast("TASK DESTROYED", 1500)
+          ns.toast("Board DESTROYED", 1500)
 
         }
       } catch (error) {
@@ -163,7 +163,7 @@ export default new Vuex.Store({
         if (await ns.confirmAction("Do you want to delete this list?", "You'll never get it back ...")) {
           await api.delete('lists/' + listId)
           commit("removeList", listId)
-          ns.toast("TASK DESTROYED", 1500)
+          ns.toast("List DESTROYED", 1500)
         }
       } catch (error) {
         console.error(error);
